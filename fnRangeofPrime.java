@@ -1,6 +1,6 @@
 public class fnRangeofPrime {
     public static void main(String []args){
-        int num = 10;
+        int num = 20;
         primeInRange(num);
 
     }    
@@ -21,7 +21,7 @@ public class fnRangeofPrime {
             return true;
         }
         for(int i=2; i<=Math.sqrt(n); i++){
-            if(i%2==0){
+            if(n%i==0){
                 return false;
             }
         }
