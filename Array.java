@@ -12,7 +12,7 @@ public class Array {
         marks[1] = sc.nextInt();
         sc.close();
         marks[2] = 98;
-        float percentage = (marks[0]+marks[1]+marks[2])/3;
+        float percentage = (marks[0]+marks[1]+marks[2])/3; // Calculates the percentage based on the marks of three subjects
         System.out.println("Percentage: "+percentage);
 
          
