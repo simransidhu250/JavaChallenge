@@ -5,6 +5,7 @@ public class LinearSearch{
         int key =9;
         int index = linearSearch(numbers,key);
         String str="Dosab";
+        System.out.println("Index: "+index);
         int result = linearSearch(menu, str);
         if(result==-1){
             System.out.println("Key not found");
