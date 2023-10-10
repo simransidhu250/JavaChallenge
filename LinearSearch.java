@@ -6,7 +6,7 @@ public class LinearSearch{
         int index = linearSearch(numbers,key);
         String str="Dosab";
         System.out.println("Index: "+index);
-        int result = linearSearch(menu, str);
+        int result = linearSearch(menu, str);   // Time Complexity : O(n)      Space Complexity: O(1)
         if(result==-1){
             System.out.println("Key not found");
         }
