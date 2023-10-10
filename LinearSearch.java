@@ -13,7 +13,7 @@ public class LinearSearch{
 
     public static int linearSearch(int numbers[],int key){
         for(int i=0; i<numbers.length; i++){
-            if(numbers[i]==key){
+            if(numbers[i]==key){ // Iterating over whole array to find the key
                 return i;
             }
         }
