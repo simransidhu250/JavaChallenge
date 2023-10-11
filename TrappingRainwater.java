@@ -16,6 +16,9 @@ public class TrappingRainwater {
         if(bars.length<2){
             return 0;
         }
+        // Time complexity is 3n which is O(n)
+        // Space complexity is 2n which is O(n)
+
         for(int i=0; i<bars.length; i++){
             if(bars[i]>leftMax){
                 leftMax = bars[i];
