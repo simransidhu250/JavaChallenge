@@ -9,7 +9,7 @@ public class BuyAndSellStock {
 
     public static int profit(int prices[]){
         int costPrice = Integer.MAX_VALUE;
-        int profit = 0, maxProfit = 0;
+        int profit = 0, maxProfit = 0;  //Time Complexity: O(n)
         for(int i =0 ; i<prices.length; i++){                           
             if(costPrice<prices[i]){                        
                 profit = prices[i] - costPrice;             // Profit is Selling price  - Cost price
