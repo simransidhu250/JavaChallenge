@@ -10,7 +10,7 @@ public class Substring {
         for(int i=start; i<end; i++){
             subst += str.charAt(i); 
         }
-        // System.out.println(subst);
+        System.out.println(subst);
     }
     
 }
