@@ -3,7 +3,7 @@ public class AbstractClasses {
         Horse h1 = new Horse();
         h1.walk();  // implements the functionality of the abstract function walk
         h1.eats();  // inherits eats function from parent class Animal
-        System.out.println(h1.color);   // first the constructor of the parent class is called and color is assigned brown
+        System.out.println(h1.color);   // first the constructor of the parent class is called and color is assigned brown 
     }    
 }
 
