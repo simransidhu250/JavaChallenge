@@ -32,6 +32,8 @@ class Horse extends Animal{
         color = "dark brown";
     }
 
+    // implements abstract function of parent class
+    
     void walk(){
         System.out.println("Walks on 4 legs");
     }
