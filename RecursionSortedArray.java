@@ -5,6 +5,11 @@ class RecursionSortedArray{
     }
 
     public static boolean isSorted(int arr[], int i){
+
+        // Iterating over complete array to check sorting in entire array
+        // Time complexity is O(n)
+        // Space complexity is space occupied by function calls O(n)
+        
         if(i==arr.length-1){
             return true;
         }
