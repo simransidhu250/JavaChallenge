@@ -7,6 +7,10 @@ public class RecursionFirstOccurence {
     
     
     static int firstIndex(int arr[], int i, int key){
+
+        // Time complexity is O(n)
+        // Space complexity is space occupied by function calls O(n)
+
         if(i==arr.length){      // if the key is not present in array
             return -1;
         }
@@ -15,4 +19,6 @@ public class RecursionFirstOccurence {
         }
         return firstIndex(arr, i+1, key);
     }
+
+    
 }
