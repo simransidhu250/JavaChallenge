@@ -56,6 +56,7 @@ public class SortMerge {
         for(k=0, i=si;k<temp.length; k++, i++ ){
             arr[i] = temp[k];
         }
+        printArray(arr);
 
     }
 }
