@@ -38,13 +38,16 @@ public class BackTrackingSudoku {
             nextCol=0;
         }
 
+        // If there is already some number at current place
         if(arr[row][col]!=0){
             return sudoku(arr, nextRow, nextCol);
         }
+
+        // If there is no number at current place
         for(int i=1; i<=9; i++){
             if(isSafe(arr, row, col,i)){
                 arr[row][col]=i;
-                if(sudoku(arr, nextRow, nextCol)){
+                if(sudoku(arr, nextRow, nextCol)){ //solution exists
                 return true;
                 }
                 arr[row][col]=0;   
