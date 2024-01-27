@@ -5,8 +5,8 @@ public class ArrayListIntro {
 
         // Java Collection Framework
         ArrayList <Integer> list = new ArrayList<>();
-        ArrayList <Boolean> list2 = new ArrayList<>();
-        ArrayList <String> list3 = new ArrayList<>();
+        // ArrayList <Boolean> list2 = new ArrayList<>();
+        // ArrayList <String> list3 = new ArrayList<>();
 
         // Add Element
         list.add(1);      // O(1)
