@@ -60,6 +60,7 @@ public class ArrayListSortedRotated {
             if(list.get(i)>list.get(i+1)){
                 leftPt = i+1;
                 rightPt = i;
+                break;
             }
         }
 
