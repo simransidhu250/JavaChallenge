@@ -65,19 +65,20 @@ public class ArrayListSortedRotated {
 
         while (leftPt!=rightPt) {
             // if current pair sum is target
+            // case 1
 
             if(list.get(leftPt)+list.get(rightPt)== target){
                 System.out.println("Pairs are: "+leftPt+" and "+rightPt);
                 return;
             }
 
-            // case 1
+            // case 2
 
             if(list.get(leftPt)+list.get(rightPt)<target){
                 leftPt= (leftPt+1)%list.size();
             }
 
-            //  case 2
+            //  case 3
             else{
                 rightPt= (rightPt-1+list.size())%list.size();
             }
