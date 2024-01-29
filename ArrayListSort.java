@@ -19,11 +19,12 @@ public class ArrayListSort {
 
         // Sorting the ArrayList in Ascending order
 
-        // Collections.sort(list);
+        Collections.sort(list);
 
         // Sorting the ArrayLIst in Descending order
 
         Collections.sort(list, Collections.reverseOrder());
+        // Comparator - functions that defines logic how the process is to be performed
 
         // Printing list after sort
 
