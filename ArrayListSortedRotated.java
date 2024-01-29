@@ -27,7 +27,11 @@ public class ArrayListSortedRotated {
 
         // Brute Force
 
-        bruteForce(list, target);
+        // bruteForce(list, target);
+
+        // Optimized approach - 2 pointer - O(n)
+
+        optimized(list, target);
     }
 
 
@@ -45,4 +49,40 @@ public class ArrayListSortedRotated {
         }
 
     }
+
+    // 2 Pointer approach - O(n)
+    static void optimized(ArrayList <Integer> list, int target){
+        int leftPt=0, rightPt=0;
+
+        // to find the pivot
+
+        for(int i=0; i<list.size()-1; i++){
+            if(list.get(i)>list.get(i+1)){
+                leftPt = i+1;
+                rightPt = i;
+            }
+        }
+
+        while (leftPt!=rightPt) {
+            // if current pair sum is target
+
+            if(list.get(leftPt)+list.get(rightPt)== target){
+                System.out.println("Pairs are: "+leftPt+" and "+rightPt);
+                return;
+            }
+
+            // case 1
+
+            if(list.get(leftPt)+list.get(rightPt)<target){
+                leftPt= (leftPt+1)%list.size();
+            }
+
+            //  case 2
+            else{
+                rightPt= (rightPt-1+list.size())%list.size();
+            }
+
+        }
+    }
+
 }
