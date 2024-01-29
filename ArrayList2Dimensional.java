@@ -30,7 +30,16 @@ public class ArrayList2Dimensional {
         mainList.add(list2);
         mainList.add(list3);
 
+        // Removing the elements
+
+        list2.remove(2);
+        list2.remove(3);
+
         // Printing main List
+
+        System.out.println(mainList);
+
+        // Printing main List using nested loop
 
         for(int i=0; i<mainList.size(); i++){
             ArrayList <Integer> currList = mainList.get(i);
