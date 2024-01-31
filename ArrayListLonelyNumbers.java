@@ -2,6 +2,10 @@
 
 import java.util.ArrayList;
 
+// import Collections
+
+import java.util.Collections;
+
 public class ArrayListLonelyNumbers {
     public static void main(String args[]){
 
@@ -56,5 +60,28 @@ public class ArrayListLonelyNumbers {
             }
         }
 
+    }
+
+    // Optimized Approach
+
+    static void optimized(ArrayList <Integer> list){
+        Collections.sort(list);
+        
+        for(int i=0; i<list.size(); i++){
+
+            // Checking if element at previous index is equal or -1 or +1 of the current number
+
+            if(i!=0 && list.get(i-1)!=list.get(i) || list.get(i-1)!= list.get(i)-1) {
+                continue;
+            }
+
+            // Checking if element at next index is equal or -1 or +1 of the current number
+            else if(i!=list.size()-1 && list.get(i+1)!=list.get(i) || list.get(i+1)!= list.get(i)+1){
+                continue;
+            }
+            else{
+                System.out.print(list.get(i)+"  ");
+            }
+        }
     }
 }
