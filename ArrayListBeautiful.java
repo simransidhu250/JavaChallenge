@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 public class ArrayListBeautiful {
     public static void main(String args[]){
+
+        // calling Beatutiful Array function
         System.out.println(beautifulArray(4));
     }
+
     public static ArrayList<Integer> beautifulArray(int n) {
         ArrayList<Integer>res=new ArrayList<>();
         divideConque(1,1,res,n);
