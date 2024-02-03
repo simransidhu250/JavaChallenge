@@ -1,10 +1,17 @@
 public class LinkListIntro {
     public static void main(String args[]){
         LinkListIntro ll = new LinkListIntro();
+
+        //  Add elements
+        
         addNodeAtHead(0);
         addNodeAtHead(1);
         addNodeAtTail(2);
         addNodeAtTail(3);
+
+        // print elements
+
+        printList();
     }
 
     public static Node head;
