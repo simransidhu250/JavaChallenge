@@ -41,7 +41,23 @@ public class LinkListIntro {
     }
 
 
+    // Add the element at tail
 
+    public static void addNodeAtTail(int data){
+
+        // Create a newNode
+
+        Node newNode = new Node(data);
+
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+
+        // set the link
+        tail.next = newNode;
+    }
 
 
 
