@@ -43,7 +43,7 @@ public class LinkListIntro {
         // System.out.println("Key present at : "+ll.iterativeSearch(6));
 
         // Recursive Search
-        System.out.println("Key present at : "+ll.recursiveSearch(6, head, 0));
+        System.out.println("Key present at : "+ll.recursiveSearch(6));
     }
 
     public static class Node{
@@ -224,22 +224,24 @@ public class LinkListIntro {
 
     // Recursive Search
 
-    public int recursiveSearch(int key,Node temp, int pos){
+    public int helperRecursiveSearch(int key,Node temp, int pos){
 
+        // key not present in list
+        if(temp == null){
+            return -1;
+        }
         // key found
         if(temp.data == key){
             return pos;
         }
 
-        // key not present in list
-        if(pos+1==size){
-            return -1;
-        }
-
         // recursion
-        int ans = recursiveSearch(key, temp.next, pos+1);
+        int ans = helperRecursiveSearch(key, temp.next, pos+1);
         return ans;
     }
 
+    public int recursiveSearch(int key){
+        return helperRecursiveSearch(key, head, 0);
+    }
     
 }
