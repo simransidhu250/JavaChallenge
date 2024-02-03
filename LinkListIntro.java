@@ -40,8 +40,10 @@ public class LinkListIntro {
         ll.printList();
 
         // Iterative Search
-        System.out.println("Key present at : "+ll.iterativeSearch(6));
+        // System.out.println("Key present at : "+ll.iterativeSearch(6));
 
+        // Recursive Search
+        System.out.println("Key present at : "+ll.recursiveSearch(6, head, 0));
     }
 
     public static class Node{
@@ -204,6 +206,9 @@ public class LinkListIntro {
     }
 
 //-----------------Searching Elements------------------------------------------------
+
+    // Iterative Search
+
     public int iterativeSearch(int key){
 
         Node temp = head;
@@ -215,6 +220,25 @@ public class LinkListIntro {
             temp = temp.next;
         }
         return -1;
+    }
+
+    // Recursive Search
+
+    public int recursiveSearch(int key,Node temp, int pos){
+
+        // key found
+        if(temp.data == key){
+            return pos;
+        }
+
+        // key not present in list
+        if(pos+1==size){
+            return -1;
+        }
+
+        // recursion
+        int ans = recursiveSearch(key, temp.next, pos+1);
+        return ans;
     }
 
     
