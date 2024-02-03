@@ -1,10 +1,14 @@
 public class LinkListIntro {
+
+    public static Node head;
+    public static Node tail;
+    public static int size=0;
     public static void main(String args[]){
         LinkListIntro ll = new LinkListIntro();
 
         //  Add elements
         
-        ll.addNodeAtHead(0);
+        ll.addNodeAtHead(4);
         ll.addNodeAtHead(1);
         ll.addNodeAtTail(2);
         ll.addNodeAtTail(3);
@@ -15,15 +19,21 @@ public class LinkListIntro {
 
         // Add the element in the midde
 
-        ll.addNodeAtMiddle(2, 9);
+        // ll.addNodeAtMiddle(2, 9);
+        ll.addNodeAtMiddle(4, 9);
+        // ll.addNodeAtMiddle(5, 9);
 
         // print list
 
         ll.printList();
-    }
 
-    public static Node head;
-    public static Node tail;
+        // Removing element from head;
+        ll.removeFirst();
+
+        // print list
+        ll.printList();
+
+    }
 
     public static class Node{
         int data;
@@ -43,6 +53,8 @@ public class LinkListIntro {
         // create a new node
 
         Node newNode = new Node(data);
+
+        size++;
 
         if(head == null){
             head = newNode;
@@ -68,6 +80,8 @@ public class LinkListIntro {
 
         Node newNode = new Node(data);
 
+        size++;
+
         if(head == null){
             head = newNode;
             tail = newNode;
@@ -82,6 +96,40 @@ public class LinkListIntro {
         tail = newNode;
     }
 
+        // Add in the middle
+        public void addNodeAtMiddle(int index, int data){
+            if(size<index){
+                System.out.println("Invalid index");
+                return;
+            }
+    
+            // if element is to be added on head
+            if(index == 0){
+                addNodeAtHead(data);
+                return;
+            }
+    
+            // Create a new node
+            Node newNode = new Node(data);
+            size++;
+    
+            int i=0;
+            Node temp= head;
+    
+            // Iterate to reach to index previous to where the element needs to be added
+            while (i<index-1) {
+                temp = temp.next;
+                i++;
+            }
+    
+            // Set the links
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+
+
+    // Print the elements in the list
+    
     public void printList(){
         // preserve the head
         Node temp = head;
@@ -93,34 +141,15 @@ public class LinkListIntro {
         System.out.println();
     }
 
-
-    // Add in the middle
-    public void addNodeAtMiddle(int index, int data){
-        // if element is to be added on head
-        if(index == 0){
-            addNodeAtHead(data);
-            return;
+    public void removeFirst(){
+        if(head==null){
+            System.out.println("List is empty! Cannot remove the element");
         }
 
-        // Create a new node
-        Node newNode = new Node(data);
-
-        int i=0;
-        Node temp= head;
-
-        // Iterate to reach to index previous to where the element needs to be added
-        while (i<index-1) {
-            temp = temp.next;
-            i++;
-        }
-
-        // Set the links
-        newNode.next = temp.next;
-        temp.next = newNode;
-
-
-
+        // re -link 
+        head= head.next;
     }
+
 
     
 }
