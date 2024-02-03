@@ -1,6 +1,10 @@
 public class LinkListIntro {
     public static void main(String args[]){
         LinkListIntro ll = new LinkListIntro();
+        addNodeAtHead(0);
+        addNodeAtHead(1);
+        addNodeAtTail(2);
+        addNodeAtTail(3);
     }
 
     public static Node head;
@@ -59,7 +63,16 @@ public class LinkListIntro {
         tail.next = newNode;
     }
 
-
+    public static void printList(){
+        // preserve the head
+        Node temp = head;
+    
+        while(temp != null){
+            System.out.print(temp.data+"  ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
 
 
     
