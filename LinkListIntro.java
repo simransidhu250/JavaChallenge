@@ -12,6 +12,14 @@ public class LinkListIntro {
         // print elements
 
         ll.printList();
+
+        // Add the element in the midde
+
+        ll.addNodeAtMiddle(2, 9);
+
+        // print list
+
+        ll.printList();
     }
 
     public static Node head;
@@ -85,6 +93,34 @@ public class LinkListIntro {
         System.out.println();
     }
 
+
+    // Add in the middle
+    public void addNodeAtMiddle(int index, int data){
+        // if element is to be added on head
+        if(index == 0){
+            addNodeAtHead(data);
+            return;
+        }
+
+        // Create a new node
+        Node newNode = new Node(data);
+
+        int i=0;
+        Node temp= head;
+
+        // Iterate to reach to index previous to where the element needs to be added
+        while (i<index-1) {
+            temp = temp.next;
+            i++;
+        }
+
+        // Set the links
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+
+
+    }
 
     
 }
