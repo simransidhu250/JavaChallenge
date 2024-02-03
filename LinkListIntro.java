@@ -33,6 +33,12 @@ public class LinkListIntro {
         // print list
         ll.printList();
 
+        // Removing element at last;
+        ll.removeLast();;
+
+        // print list
+        ll.printList();
+
     }
 
     public static class Node{
@@ -144,10 +150,48 @@ public class LinkListIntro {
     public void removeFirst(){
         if(head==null){
             System.out.println("List is empty! Cannot remove the element");
+            return;
         }
 
         // re -link 
         head= head.next;
+
+        // size updated
+        size--;
+
+        // tail value updated
+        if(size==0){
+            tail =null;
+        }
+
+    }
+
+    public void removeLast(){
+        // when list is empty
+        if(size == 0){
+            System.out.println("List is empty! Cannot remove element");
+            return;
+        }
+        // when list contains one element
+        else if(size == 1){
+            head = tail = null;
+            size = 0;
+            return;
+        }
+
+        int i = 0;
+        Node temp = head;
+        while (size-2>i) {  
+            temp = temp.next;
+            i++;
+        }
+
+        // re-link
+        temp.next = null;
+
+        // update tail
+        tail = temp;
+        size--;
     }
 
 
