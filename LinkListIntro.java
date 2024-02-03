@@ -4,14 +4,14 @@ public class LinkListIntro {
 
         //  Add elements
         
-        addNodeAtHead(0);
-        addNodeAtHead(1);
-        addNodeAtTail(2);
-        addNodeAtTail(3);
+        ll.addNodeAtHead(0);
+        ll.addNodeAtHead(1);
+        ll.addNodeAtTail(2);
+        ll.addNodeAtTail(3);
 
         // print elements
 
-        printList();
+        ll.printList();
     }
 
     public static Node head;
@@ -30,7 +30,7 @@ public class LinkListIntro {
 
     // Add element at the head
 
-    public static void addNodeAtHead(int data){
+    public  void addNodeAtHead(int data){
         
         // create a new node
 
@@ -54,7 +54,7 @@ public class LinkListIntro {
 
     // Add the element at tail
 
-    public static void addNodeAtTail(int data){
+    public void addNodeAtTail(int data){
 
         // Create a newNode
 
@@ -68,9 +68,13 @@ public class LinkListIntro {
 
         // set the link
         tail.next = newNode;
+
+        // tail is new node now
+
+        tail = newNode;
     }
 
-    public static void printList(){
+    public void printList(){
         // preserve the head
         Node temp = head;
     
