@@ -39,6 +39,9 @@ public class LinkListIntro {
         // print list
         ll.printList();
 
+        // Iterative Search
+        System.out.println("Key present at : "+ll.iterativeSearch(6));
+
     }
 
     public static class Node{
@@ -51,6 +54,8 @@ public class LinkListIntro {
         }
 
     }
+
+//-----------------Adding Elements------------------------------------------------
 
     // Add element at the head
 
@@ -103,36 +108,37 @@ public class LinkListIntro {
     }
 
         // Add in the middle
-        public void addNodeAtMiddle(int index, int data){
-            if(size<index){
-                System.out.println("Invalid index");
-                return;
-            }
-    
-            // if element is to be added on head
-            if(index == 0){
-                addNodeAtHead(data);
-                return;
-            }
-    
-            // Create a new node
-            Node newNode = new Node(data);
-            size++;
-    
-            int i=0;
-            Node temp= head;
-    
-            // Iterate to reach to index previous to where the element needs to be added
-            while (i<index-1) {
-                temp = temp.next;
-                i++;
-            }
-    
-            // Set the links
-            newNode.next = temp.next;
-            temp.next = newNode;
+    public void addNodeAtMiddle(int index, int data){
+        if(size<index){
+            System.out.println("Invalid index");
+            return;
         }
 
+        // if element is to be added on head
+        if(index == 0){
+            addNodeAtHead(data);
+            return;
+        }
+
+        // Create a new node
+        Node newNode = new Node(data);
+        size++;
+
+        int i=0;
+        Node temp= head;
+
+        // Iterate to reach to index previous to where the element needs to be added
+        while (i<index-1) {
+            temp = temp.next;
+            i++;
+        }
+
+        // Set the links
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
+//-----------------Printing Elements------------------------------------------------
 
     // Print the elements in the list
     
@@ -146,6 +152,9 @@ public class LinkListIntro {
         }
         System.out.println();
     }
+
+
+ //-----------------Removing Elements------------------------------------------------
 
     public void removeFirst(){
         if(head==null){
@@ -194,6 +203,19 @@ public class LinkListIntro {
         size--;
     }
 
+//-----------------Searching Elements------------------------------------------------
+    public int iterativeSearch(int key){
+
+        Node temp = head;
+
+        for(int i=0; i<size; i++){
+            if(temp.data== key){
+                return i;
+            }
+            temp = temp.next;
+        }
+        return -1;
+    }
 
     
 }
