@@ -23,6 +23,8 @@ public class LinkListDetectCycle {
 
 
 
+
+
  
     }
 
@@ -39,6 +41,9 @@ public class LinkListDetectCycle {
 
 //-----------------Link List Cycle------------------------------------------------
 
+    public void detectCycle(){
+        
+    }
 
 //-----------------Adding Elements------------------------------------------------
 
