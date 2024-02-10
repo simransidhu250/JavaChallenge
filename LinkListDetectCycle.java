@@ -33,6 +33,7 @@ public class LinkListDetectCycle {
         // Check if there is cycle or not
 
         System.out.println("Is there a cycle in link list? "+ll.removeCycle());
+        
         // after removing cycle
         System.out.println("Is there a cycle in link list? "+ll.removeCycle());
 
