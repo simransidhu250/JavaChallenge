@@ -33,6 +33,8 @@ public class LinkListDetectCycle {
         // Check if there is cycle or not
 
         System.out.println("Is there a cycle in link list? "+ll.removeCycle());
+        // after removing cycle
+        System.out.println("Is there a cycle in link list? "+ll.removeCycle());
 
 
 
@@ -72,19 +74,20 @@ public class LinkListDetectCycle {
        }
        
     
-       if(cycle = false){
+       if(cycle ==false){
             return false;
        }
 
        // remove cycle
        slowNode = head;
-       Node prev;
+       Node prev=null;
        while (fastNode!=slowNode) {
-            prev = fast;
-            
+            prev = fastNode;
+            slowNode = slowNode.next;
+            fastNode = fastNode.next;
        }
-
-
+       prev.next = null;
+       return true;
     }
 
 
