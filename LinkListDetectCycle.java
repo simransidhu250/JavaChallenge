@@ -58,7 +58,7 @@ public class LinkListDetectCycle {
 
     public boolean removeCycle(){
 
-        // detect cycle
+        // Step 1 : detect cycle
        Node fastNode = head;
        Node slowNode = head;
        boolean cycle = false;
@@ -79,9 +79,11 @@ public class LinkListDetectCycle {
             return false;
        }
 
-       // remove cycle
+    //   Step 2: slow = head
        slowNode = head;
        Node prev=null;
+
+        // Step 3: remove cycle
        while (fastNode!=slowNode) {
             prev = fastNode;
             slowNode = slowNode.next;
