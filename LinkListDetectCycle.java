@@ -67,7 +67,7 @@ public class LinkListDetectCycle {
             fastNode = fastNode.next.next;
             slowNode = slowNode.next;
 
-            // check if there is cycle
+            // check if there is cycle in the link list
             if(fastNode == slowNode){
                 cycle = true;
                 break;
