@@ -4,6 +4,8 @@ import java.util.LinkedList;
 public class LinkListInbuilt {
     public static void main(String args[]){
 
+        // Using Linked List from Java Collection Framework
+
         // Create a Linked List
         LinkedList<Integer> ll = new LinkedList<>();
 
