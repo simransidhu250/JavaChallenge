@@ -2,7 +2,7 @@
 import java.util.LinkedList;
 
 public class LinkListInbuilt {
-    public static void main(String args){
+    public static void main(String args[]){
 
         // Create a Linked List
         LinkedList<Integer> ll = new LinkedList<>();
@@ -10,12 +10,19 @@ public class LinkListInbuilt {
         // Add elements to Link List
         ll.addLast(1);
         ll.addLast(2);
-        ll.addLast(0);
+        ll.addFirst(0);
 
         // print the list
         System.out.println(ll);
 
-        
+        // remove
+        ll.removeFirst();
+        ll.removeLast();
+
+        // print the list
+        System.out.println(ll);
+
+
     }
 
     
