@@ -20,13 +20,21 @@ public class LinkListMergeSort {
 
         // Merge Sort
         
-        ll.mergeSort(head);
+        Node temp = mergeSort(head);
+        head = temp.next;
+        ll.printList(head);
  
     }
 
 //-----------------Merge Sort------------------------------------------------
 
     public static Node mergeSort(Node head){
+
+        // base case
+
+        if(head == null || head.next == null){
+            return head;
+        }
 
         //  find mid
         Node mid  = findMid();
@@ -57,6 +65,8 @@ public class LinkListMergeSort {
 
     static Node merge(Node leftHead, Node rightHead){
         Node temp = new Node(-1);
+
+        // when both lists are not null
         while(leftHead!=null && rightHead !=null){
             if(leftHead.data<=rightHead.data){
                 temp.next = leftHead;
@@ -64,9 +74,24 @@ public class LinkListMergeSort {
                 temp = temp.next;
             }
             else{
-
+                temp.next = rightHead;
+                rightHead = rightHead.next;
+                temp = temp.next;
             }
         }
+
+        // when one of the list gets empty
+
+        while (leftHead!=null) {
+            temp.next = leftHead;
+            leftHead = leftHead.next;
+        }
+
+        while (rightHead!=null) {
+            temp.next = rightHead;
+            rightHead = rightHead.next;
+        }
+
         return temp;
     }
 
