@@ -55,7 +55,20 @@ public class LinkListMergeSort {
         return slow;
     }
 
+    static Node merge(Node leftHead, Node rightHead){
+        Node temp = new Node(-1);
+        while(leftHead!=null && rightHead !=null){
+            if(leftHead.data<=rightHead.data){
+                temp.next = leftHead;
+                leftHead = leftHead.next;
+                temp = temp.next;
+            }
+            else{
 
+            }
+        }
+        return temp;
+    }
 
    
 
