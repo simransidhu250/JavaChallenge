@@ -20,15 +20,15 @@ public class LinkListMergeSort {
 
         // Merge Sort
         
-        Node temp = mergeSort(head);
-        head = temp.next;
+        Node temp = ll.mergeSort(head);
+        head = temp;
         ll.printList(head);
  
     }
 
 //-----------------Merge Sort------------------------------------------------
 
-    public static Node mergeSort(Node head){
+    public Node mergeSort(Node head){
 
         // base case
 
@@ -37,26 +37,26 @@ public class LinkListMergeSort {
         }
 
         //  find mid
-        Node mid  = findMid();
+        Node mid  = findMid(head);
 
         // Divide the link list into two halves
         Node rightHead = mid.next;
         Node leftHead = head;
         mid.next = null;
 
-        leftHead = mergeSort(leftHead);
-        rightHead = mergeSort(rightHead);
+        Node newLeft = mergeSort(leftHead);
+        Node newRight = mergeSort(rightHead);
 
         // merge
 
-        merge(leftHead, rightHead);
+        return merge(newLeft, newRight);
+   }
 
-        return head;
-    }
-    static Node findMid(){
-        Node slow=head, fast =head;
+    static Node findMid(Node newList){
+        Node slow=newList;
+        Node fast =newList.next; // NOTE:-------------------we need last element of first half as middle--------
         // two pointer approach
-        while(fast!=null){
+        while(fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -65,9 +65,10 @@ public class LinkListMergeSort {
 
     static Node merge(Node leftHead, Node rightHead){
         Node temp = new Node(-1);
+        Node mergedList = temp;
 
         // when both lists are not null
-        while(leftHead!=null && rightHead !=null){
+        while(leftHead!=null && rightHead!=null){
             if(leftHead.data<=rightHead.data){
                 temp.next = leftHead;
                 leftHead = leftHead.next;
@@ -82,17 +83,19 @@ public class LinkListMergeSort {
 
         // when one of the list gets empty
 
-        while (leftHead!=null) {
+        while(leftHead!=null) {
             temp.next = leftHead;
             leftHead = leftHead.next;
+            temp = temp.next;
         }
 
-        while (rightHead!=null) {
+        while(rightHead!=null) {
             temp.next = rightHead;
             rightHead = rightHead.next;
+            temp = temp.next;
         }
 
-        return temp;
+        return mergedList.next;
     }
 
    
