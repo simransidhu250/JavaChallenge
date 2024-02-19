@@ -57,6 +57,8 @@ public class LinkListZigZag {
   }
   
    static Node reverseList(Node rightHead){
+
+      // reverse the list
       Node prev= null;
       Node next = null;
       while(rightHead!=null){
@@ -84,7 +86,7 @@ public class LinkListZigZag {
        Node nextLeft = leftHead;
        Node nextRight = rightHead;
 
-       // when both lists are not null
+       // printing zig zag pattern
        while(leftHead!=null && rightHead!=null){
           nextLeft = leftHead.next;
           nextRight = rightHead.next;
