@@ -14,6 +14,13 @@ public class LinkListDoubly {
 
         // print the linked list
         ll.printList();
+
+        // remove the element from head;
+        ll.removeFromHead();
+
+        // print the linked list
+        ll.printList();
+
     }
 //--------------------Node class----------------------------------------------
     // Node class
@@ -32,10 +39,13 @@ public class LinkListDoubly {
     public void addToHead(int val){
         ListNode temp = new ListNode(val);
         size++;
+
+        // edge case
         if(head == null){
             head = tail = temp;
             return;
         }
+
         temp.next = head;
         head.prev = temp;
         head = temp;
@@ -50,5 +60,28 @@ public class LinkListDoubly {
             System.out.print(temp.val+"  ");
             temp = temp.next;
         }
+        System.out.println();
+    }
+
+//---------------------------Remove the node from the linked List ------------------------
+
+    public void removeFromHead(){
+
+        // edge cases if head is null
+        if(head == null){
+            System.out.println("The list is empty! Cannot remove anything :)");
+            return;
+        }
+        // if list contains single element
+        if(size == 1){
+            head = tail = null;
+            size--;
+            return;
+        }
+        ListNode temp = head;
+        head = head.next;
+        head.prev = null;
+        temp.next = null;
+        size--;
     }
 }
