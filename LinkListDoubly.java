@@ -3,8 +3,17 @@ public class LinkListDoubly {
     public static ListNode tail = null;
     public static int size = 0;
     public static void main(String args[]){
+        // create the linked list
         LinkListDoubly ll = new LinkListDoubly();
+
+        // add values to linked list
         ll.addToHead(4);
+        ll.addToHead(3);
+        ll.addToHead(2);
+        ll.addToHead(1);
+
+        // print the linked list
+        ll.printList();
     }
 //--------------------Node class----------------------------------------------
     // Node class
@@ -20,10 +29,11 @@ public class LinkListDoubly {
     }
 //---------------------Add node to head --------------------------------------------------
 
-    public static void addToHead(int val){
+    public void addToHead(int val){
         ListNode temp = new ListNode(val);
+        size++;
         if(head == null){
-            head = temp;
+            head = tail = temp;
             return;
         }
         temp.next = head;
