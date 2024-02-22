@@ -6,7 +6,7 @@ public class LinkListDeleteNnodes {
     public static void main(String args[]){
         LinkListDeleteNnodes ll = new LinkListDeleteNnodes();
 
-        // add nodes tot eh link list
+        add nodes tot eh link list
         for(int i=10; i>0;i--){
             ll.addToHead(i);
         }
@@ -24,17 +24,19 @@ public class LinkListDeleteNnodes {
 //-----------------------Retain and Skip Nodes-------------------------------
 
     public void retainSkip(int m, int n){
-        int count = 0;
+        int count = 1;
         ListNode curr = head;
         ListNode prev = null;
         while(curr!=null){
             if(count<=m){
                 if(prev==null){
-                    prev=curr=null;
-                    return;
+                    prev=curr;
+                    
                 }
+                else{
                 prev.next = curr;
                 prev = curr;
+                }
             }
 
             curr = curr.next;
@@ -43,6 +45,9 @@ public class LinkListDeleteNnodes {
             }else{
                 count++;
             }
+        }
+        if(head!=null){
+            prev.next = null;
         }
     }
 
