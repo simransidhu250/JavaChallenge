@@ -6,7 +6,7 @@ public class LinkListDeleteNnodes {
     public static void main(String args[]){
         LinkListDeleteNnodes ll = new LinkListDeleteNnodes();
 
-        add nodes tot eh link list
+        // add nodes to the link list
         for(int i=10; i>0;i--){
             ll.addToHead(i);
         }
