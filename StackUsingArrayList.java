@@ -27,6 +27,9 @@ public class StackUsingArrayList{
         list.add(data);
     }
     public int top(){
+        if(list.size()==0){
+            return -1;
+        }
         return list.get(list.size()-1);
     }
 
