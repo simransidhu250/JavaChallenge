@@ -19,44 +19,58 @@ public class LinkListSwapNodes {
     }
     //Swap nodes function
     public void swap(int m, int n){
-        ListNode curr = head;
-        ListNode prev1 = null;
-        ListNode prev2 = null;
-        ListNode key1 = null;
-        ListNode key2 = null;
 
         // if both keys data are same
         if(m==n){
             return;
         }
 
-        // find previous of key1
-        while (curr!=null&& curr.val!=m) {
-            if(curr.val == m){
-                key1 = prev1; 
-            }
-            prev1 = curr;
-            curr = curr.next;  
-        }
 
-        // find previous of key2
-        while (curr!=null&& curr.val!=n) {
-            if(curr.val== n){
-                key2 = prev2;
-            }
-            prev2 = curr;
-            curr = curr.next;  
+        // find first key
+
+        ListNode curr1 = head;
+        ListNode prev1 = null;
+
+        while(curr1!=null && curr1.val!=m){
+            prev1 = curr1;
+            curr1 = curr1.next;
         }
 
 
-        ListNode temp = key1.next;
-        key1.next = key2.next;
-        key2.next = temp;
-        temp = key1.next.next;
-        key1.next.next = key2.next.next;
-        key2.next.next = temp;
-        // System.out.println(temp.val);
-        // System.out.println(key1.next.val);
+        // find Second key
+
+        ListNode curr2 = head;
+        ListNode prev2 = null;
+        while(curr2!=null && curr2.val!=n){
+            prev2 = curr2;
+            curr2 = curr2.next;
+        }
+
+        // case 1: we did not find one of the keys or both of the keys
+        if(curr1==null || curr2==null){
+            return;
+        }
+
+        // if the head node is key
+
+        if(prev1!=null){
+            prev1.next = curr2;
+        }
+        else{
+            head = curr2;
+        }
+
+        if(prev2!=null){
+            prev2.next = curr1;
+        }
+        else{
+            head = curr1;
+        }
+
+        // set links
+        ListNode temp = curr1.next;
+        curr1.next = curr2.next;
+        curr2.next = temp;
     }
 
 //--------------------Node class----------------------------------------------
