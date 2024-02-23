@@ -21,12 +21,59 @@ public class LinkListOddEven {
     }
 
     public void OddEven(){
-        Node temp = null;
+        Node lefthead = null;
+        Node temp1 = head;
 
         // if the linked list is empty
         if(head == null){
             return;
         }
+
+        // found first odd element
+        while (lefthead!=null && temp1!=null) {
+            if(temp1.data%2 !=0){
+                lefthead = temp1;
+            }
+            temp1 = temp1.next;
+        }
+        
+ 
+        Node righthead = null;
+        Node temp2 = head;
+
+
+        // found first even element
+        while (righthead!=null && temp1!=null) {
+            if(temp1.data%2 ==0){
+                lefthead = temp1;
+            }
+            temp1 = temp1.next;
+        }
+
+        if(lefthead!=null){
+            Node temp = lefthead.next;
+            while(temp!=null){
+                if(temp1.data%2 !=0){
+                    temp= temp1;
+                    temp = temp.next;
+                }
+                temp1 = temp1.next;
+            }
+        }
+
+
+        Node temp3 = righthead.next;
+        while(temp3==null){
+            if(temp1.data%2 !=0){
+                temp2= temp3;
+                temp2 = temp2.next;
+            }
+            temp3 = temp3.next;
+        }
+
+
+
+
  
 
 
