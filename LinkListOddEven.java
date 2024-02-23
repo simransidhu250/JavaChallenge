@@ -19,6 +19,19 @@ public class LinkListOddEven {
 
         ll.printList(head);
     }
+
+    public void OddEven(){
+        Node temp = null;
+
+        // if the linked list is empty
+        if(head == null){
+            return;
+        }
+ 
+
+
+
+    }
 //------------------Node Class------------------------------------------------
 
     public static class Node{
