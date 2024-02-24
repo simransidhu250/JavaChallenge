@@ -27,10 +27,12 @@ public class StackUsingLinkedList {
 
     }
 
+    // Push operation
     public void push(int val){
         ll.addFirst(val);
     }
 
+    // Pop operation
     public int top(){
         if(ll==null){
             return -1;
@@ -38,6 +40,7 @@ public class StackUsingLinkedList {
         return ll.getFirst();
     }
 
+    // Peek Operation
     public int pop(){
         if(ll==null){
             return -1;
