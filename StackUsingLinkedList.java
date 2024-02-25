@@ -34,7 +34,7 @@ public class StackUsingLinkedList {
 
     // Pop operation
     public int top(){
-        if(ll==null){
+        if(ll==null){ 
             return -1;
         }
         return ll.getFirst();
