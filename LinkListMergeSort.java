@@ -10,7 +10,7 @@ public class LinkListMergeSort {
         
         ll.addNodeAtHead(1);
         ll.addNodeAtHead(2);
-        ll.addNodeAtHead(3);
+        // ll.addNodeAtHead(3);
         ll.addNodeAtHead(4);
         ll.addNodeAtHead(5);
 
@@ -38,6 +38,7 @@ public class LinkListMergeSort {
 
         //  find mid
         Node mid  = findMid(head);
+        System.out.println(mid.data);
 
         // Divide the link list into two halves
         Node rightHead = mid.next;
