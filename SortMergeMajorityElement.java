@@ -1,4 +1,4 @@
-public class MergeSortMajorityElement {
+public class SortMergeMajorityElement {
     public static void main(String args[]){
         int arr[] = {20,10,30,20,30,30,9,30,30};
         int element = majorityElement(arr, 0, arr.length-1);
