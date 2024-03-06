@@ -12,7 +12,9 @@ public class StackStockSpan {
     public void stockSpan(int arr[]) {
         Stack<Integer> stack = new Stack<>();
         int span[] = new int[arr.length];
+        // pushing first element to the stack so that it is not empty
         stack.push(0);
+        // setting value of first span otherwise it will be 0
         span[0] = 1;
         for (int i = 1; i < arr.length; i++) {
             System.out.println(arr[stack.peek()] + " < " + arr[i]);
